@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="film1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1917" />
+      <stop offset="50%" stop-color="#292524" />
+      <stop offset="100%" stop-color="#44403c" />
+    </linearGradient>
+    <radialGradient id="sunGlow1" cx="65%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.8" />
+      <stop offset="40%" stop-color="#d97706" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.08 0" />
+      <feComposite in2="SourceGraphic" in="glitch" operator="in" />
+    </filter>
+  </defs>
+
+  <!-- Film Frame -->
+  <rect width="800" height="1000" fill="#141416" />
+  
+  <!-- Image area -->
+  <g transform="translate(40, 60)">
+    <rect width="720" height="880" fill="url(#film1)" />
+    <!-- Golden sunset ambient bleed -->
+    <rect width="720" height="880" fill="url(#sunGlow1)" />
+    
+    <!-- Minimalist Skyline / Horizon Silhouette -->
+    <path d="M0 680 Q180 640 360 670 T720 630 L720 880 L0 880 Z" fill="#0c0a09" opacity="0.9" />
+    
+    <!-- Abstract Ambient Figures / Light -->
+    <circle cx="480" cy="300" r="140" fill="#fef3c7" opacity="0.25" filter="blur(40px)" />
+    <path d="M220 540 C220 480 320 480 320 540 L340 780 L200 780 Z" fill="#1c1917" opacity="0.85" />
+    <path d="M360 520 C360 460 460 460 460 520 L480 780 L340 780 Z" fill="#171514" opacity="0.9" />
+
+    <!-- 35mm Date Stamp in corner -->
+    <text x="690" y="850" font-family="'Space Mono', monospace" font-size="16" fill="#f59e0b" opacity="0.75" text-anchor="end" letter-spacing="2">
+      '26 11 12
+    </text>
+  </g>
+
+  <!-- Film Edge Markings -->
+  <text x="50" y="40" font-family="'Space Mono', monospace" font-size="12" fill="#78716c" letter-spacing="3">
+    PORTRA 400 // 35MM
+  </text>
+  <text x="750" y="40" font-family="'Space Mono', monospace" font-size="12" fill="#78716c" text-anchor="end" letter-spacing="2">
+    ▶ 01A
+  </text>
+  <text x="50" y="975" font-family="'Space Mono', monospace" font-size="11" fill="#57534e" letter-spacing="2">
+    FRAME 01 // ARCHIVE
+  </text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dawnGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="85%" stop-color="#334155" />
+      <stop offset="100%" stop-color="#475569" />
+    </linearGradient>
+  </defs>
+
+  <rect width="700" height="700" fill="#141416" />
+
+  <g transform="translate(40, 50)">
+    <rect width="620" height="600" fill="url(#dawnGrad)" />
+
+    <!-- Distant mountain peaks -->
+    <polygon points="0,600 140,430 280,600" fill="#0f172a" />
+    <polygon points="180,600 340,380 500,600" fill="#020617" />
+    <polygon points="380,600 520,440 620,600" fill="#0f172a" />
+
+    <!-- Thin Crescent Moon -->
+    <path d="M480 140 A 32 32 0 0 0 495 190 A 28 28 0 1 1 480 140 Z" fill="#f8fafc" opacity="0.8" />
+
+    <!-- Few sharp stars -->
+    <circle cx="120" cy="160" r="1.5" fill="#fff" />
+    <circle cx="240" cy="110" r="2" fill="#fff" opacity="0.9" />
+    <circle cx="360" cy="180" r="1.5" fill="#fff" />
+    <circle cx="540" cy="220" r="1.5" fill="#fff" />
+
+    <!-- Date Stamp -->
+    <text x="590" y="575" font-family="'Space Mono', monospace" font-size="15" fill="#f59e0b" opacity="0.75" text-anchor="end" letter-spacing="2">
+      '26 11 12
+    </text>
+  </g>
+
+  <text x="50" y="32" font-family="'Space Mono', monospace" font-size="11" fill="#78716c" letter-spacing="3">
+    ARCHIVE MONOCHROME // 35MM
+  </text>
+  <text x="650" y="32" font-family="'Space Mono', monospace" font-size="11" fill="#78716c" text-anchor="end" letter-spacing="2">
+    ▶ 06A
+  </text>
+</svg>

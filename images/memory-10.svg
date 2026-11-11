@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sky10" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#451a03"/>
+      <stop offset="60%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#fde047"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="650" fill="#12100e"/>
+  <g transform="translate(45, 45)">
+    <rect width="910" height="560" fill="url(#sky10)"/>
+    <circle cx="455" cy="280" r="70" fill="#fffbeb" opacity="0.9"/>
+    <!-- Distant Dunes -->
+    <path d="M0 340 Q250 290 500 330 T910 310 L910 560 L0 560 Z" fill="#78350f" opacity="0.95"/>
+    <path d="M0 400 Q200 360 450 390 T910 370 L910 560 L0 560 Z" fill="#451a03"/>
+    <!-- Endless Highway -->
+    <polygon points="455,390 465,390 580,560 330,560" fill="#1c1917"/>
+    <line x1="460" y1="400" x2="455" y2="560" stroke="#facc15" stroke-width="3" stroke-dasharray="12,12"/>
+    <text x="875" y="535" font-family="'Space Mono', monospace" font-size="16" fill="#fde047" opacity="0.8" text-anchor="end" letter-spacing="2">'26 11 12</text>
+  </g>
+  <text x="55" y="32" font-family="'Space Mono', monospace" font-size="12" fill="#78716c" letter-spacing="3">FUJI VELVIA 50 // 35MM</text>
+  <text x="945" y="32" font-family="'Space Mono', monospace" font-size="12" fill="#78716c" text-anchor="end" letter-spacing="2">▶ 10A</text>
+</svg>

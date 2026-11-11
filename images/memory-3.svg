@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" width="100%" height="100%">
+  <defs>
+    <radialGradient id="nightBokehBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1e1b2e" />
+      <stop offset="60%" stop-color="#111019" />
+      <stop offset="100%" stop-color="#09080d" />
+    </radialGradient>
+  </defs>
+
+  <rect width="700" height="700" fill="#141416" />
+
+  <g transform="translate(40, 50)">
+    <rect width="620" height="600" fill="url(#nightBokehBg)" />
+
+    <!-- Ambient Bokeh Circles -->
+    <circle cx="180" cy="220" r="75" fill="#f59e0b" opacity="0.18" />
+    <circle cx="440" cy="180" r="95" fill="#ec4899" opacity="0.12" />
+    <circle cx="320" cy="360" r="120" fill="#e0e7ff" opacity="0.08" />
+    <circle cx="160" cy="460" r="65" fill="#38bdf8" opacity="0.15" />
+    <circle cx="480" cy="420" r="80" fill="#fbbf24" opacity="0.16" />
+    
+    <!-- Crisp smaller lights -->
+    <circle cx="280" cy="260" r="28" fill="#fffbeb" opacity="0.4" />
+    <circle cx="380" cy="240" r="34" fill="#fde68a" opacity="0.35" />
+    <circle cx="230" cy="340" r="22" fill="#fed7aa" opacity="0.3" />
+    <circle cx="410" cy="350" r="26" fill="#fecdd3" opacity="0.35" />
+
+    <!-- Date Stamp -->
+    <text x="590" y="575" font-family="'Space Mono', monospace" font-size="15" fill="#f59e0b" opacity="0.75" text-anchor="end" letter-spacing="2">
+      '26 11 12
+    </text>
+  </g>
+
+  <text x="50" y="32" font-family="'Space Mono', monospace" font-size="11" fill="#78716c" letter-spacing="3">
+    ILFORD HP5 PLUS // FRAME 03
+  </text>
+  <text x="650" y="32" font-family="'Space Mono', monospace" font-size="11" fill="#78716c" text-anchor="end" letter-spacing="2">
+    ▶ 03A
+  </text>
+</svg>

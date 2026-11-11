@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sea8" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="750" fill="#0b0c10"/>
+  <g transform="translate(50, 45)">
+    <rect width="900" height="660" fill="url(#sea8)"/>
+    <!-- Crescent Moon -->
+    <path d="M680 140 A35 35 0 1 0 715 175 A28 28 0 1 1 680 140 Z" fill="#f8fafc" opacity="0.9"/>
+    <!-- Ocean Waves Silhouette -->
+    <path d="M0 440 Q225 400 450 440 T900 420 L900 660 L0 660 Z" fill="#030712" opacity="0.9"/>
+    <path d="M0 480 Q225 460 450 490 T900 470 L900 660 L0 660 Z" fill="#020617" opacity="0.8"/>
+    <!-- Water shimmer line -->
+    <ellipse cx="680" cy="520" rx="60" ry="3" fill="#38bdf8" opacity="0.4"/>
+    <ellipse cx="680" cy="560" rx="90" ry="4" fill="#38bdf8" opacity="0.3"/>
+    <text x="860" y="630" font-family="'Space Mono', monospace" font-size="16" fill="#38bdf8" opacity="0.75" text-anchor="end" letter-spacing="2">'26 11 12</text>
+  </g>
+  <text x="60" y="32" font-family="'Space Mono', monospace" font-size="12" fill="#64748b" letter-spacing="3">ILFORD HP5 // 35MM</text>
+  <text x="940" y="32" font-family="'Space Mono', monospace" font-size="12" fill="#64748b" text-anchor="end" letter-spacing="2">▶ 08A</text>
+</svg>

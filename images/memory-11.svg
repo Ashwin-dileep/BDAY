@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <radialGradient id="fire11" cx="50%" cy="80%" r="60%">
+      <stop offset="0%" stop-color="#ea580c" stop-opacity="0.7"/>
+      <stop offset="40%" stop-color="#c2410c" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="#0c0a09"/>
+  <g transform="translate(40, 60)">
+    <rect width="720" height="880" fill="#171412"/>
+    <rect width="720" height="880" fill="url(#fire11)"/>
+    <!-- Pine Trees Silhouette -->
+    <path d="M120 720 L160 560 L140 560 L180 440 L160 440 L195 320 L230 440 L210 440 L250 560 L230 560 L270 720 Z" fill="#0c0a09"/>
+    <path d="M480 720 L520 540 L500 540 L540 420 L520 420 L555 300 L590 420 L570 420 L610 540 L590 540 L630 720 Z" fill="#0c0a09" opacity="0.9"/>
+    <!-- Floating Embers -->
+    <circle cx="340" cy="650" r="4" fill="#fef08a" opacity="0.9"/>
+    <circle cx="380" cy="580" r="3" fill="#f97316" opacity="0.8"/>
+    <circle cx="360" cy="520" r="2.5" fill="#fbbf24" opacity="0.85"/>
+    <circle cx="420" cy="470" r="2" fill="#fed7aa" opacity="0.75"/>
+    <circle cx="330" cy="430" r="3" fill="#ea580c" opacity="0.7"/>
+    <text x="690" y="850" font-family="'Space Mono', monospace" font-size="16" fill="#f97316" opacity="0.75" text-anchor="end" letter-spacing="2">'26 11 12</text>
+  </g>
+  <text x="50" y="40" font-family="'Space Mono', monospace" font-size="12" fill="#78716c" letter-spacing="3">KODAK TRI-X // 35MM</text>
+  <text x="750" y="40" font-family="'Space Mono', monospace" font-size="12" fill="#78716c" text-anchor="end" letter-spacing="2">▶ 11A</text>
+</svg>

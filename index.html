@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Tribute — Happy Birthday ✨</title>
+  <meta name="description" content="A private birthday archive & tribute" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>" />
+  <!-- Google Fonts: Cinzel + Plus Jakarta Sans + Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=11" />
+</head>
+
+<body>
+  <script>
+    try {
+      ['bday_site_config','bday_site_config_v1','bday_site_config_v2','bday_site_config_v3','bday_site_config_v4','bday_site_config_v5','bday_site_config_v6','bday_site_config_v7','bday_site_config_v8','bday_site_config_v9'].forEach(k => localStorage.removeItem(k));
+    } catch(e) {}
+  </script>
+
+  <!-- ====================================================================
+       SPACE GALAXY & NEBULA BACKGROUND CONTAINER
+       ==================================================================== -->
+  <div class="space-background-container">
+    <video id="bg-video" autoplay loop muted playsinline>
+      <source src="Galaxy_3___01.mp4" type="video/mp4" />
+      <source src="background.mp4" type="video/mp4" />
+      <source src="galaxy.mp4" type="video/mp4" />
+    </video>
+    <canvas id="space-galaxy-canvas"></canvas>
+    <div class="space-overlay-vignette"></div>
+  </div>
+
+  <!-- ====================================================================
+       CINEMATIC ENTRY (UNDERSTATED & COOL)
+       ==================================================================== -->
+  <div id="cinematic-entry">
+    <div class="entry-monogram" id="entry-monogram">N</div>
+    <div class="entry-tagline" id="entry-tagline">SPECIAL EDITION // ARCHIVE</div>
+    <h1 class="entry-title" id="entry-title">
+      <span class="entry-title-prefix">HAPPY BIRTHDAYYYY</span>
+      <span class="entry-title-name">Nanduuttaaaaaaaaa.</span>
+    </h1>
+    <button id="btn-enter" class="btn-enter-archive">
+      Enter Archive <span>→</span>
+    </button>
+  </div>
+
+  <div class="container">
+
+    <!-- ==================================================================
+         MASTHEAD ACTIONS (AUDIO & EDIT)
+         ================================================================== -->
+    <header class="site-masthead">
+      <div class="masthead-actions">
+        <button id="btn-sound-toggle" class="btn-icon-minimal" title="Toggle Ambient Audio">
+          <span id="sound-status-icon">○</span> <span id="sound-status-text">AUDIO</span>
+        </button>
+        <button id="btn-open-edit" class="btn-icon-minimal" title="Edit Content">
+          <span>✎</span> EDIT
+        </button>
+      </div>
+    </header>
+
+    <!-- ==================================================================
+         01 / THE WRITTEN LETTER
+         ================================================================== -->
+    <section class="letter-section" id="note">
+      <div class="section-anchor">
+        <div class="section-label-group">
+          <span class="section-index"></span>
+          <h2 class="section-heading">Inna pidicho</h2>
+        </div>
+        <span class="section-subtitle">UNFILTERED WORDS</span>
+      </div>
+
+      <article class="letter-article">
+        <div class="letter-salutation-text" id="letter-salutation">
+          Nanduuttaaaaaaaaa,
+        </div>
+
+        <div class="letter-prose" id="letter-paragraphs">
+          <!-- Populated from config.js -->
+        </div>
+
+        <div class="letter-signoff-block">
+          <div>
+            <div class="signoff-closing" id="letter-closing">Shalyam cheythond,</div>
+            <div class="signoff-name" id="letter-signature">RootFolder</div>
+          </div>
+
+          <div class="letter-toolbar">
+            <button id="btn-copy-note" class="btn-icon-minimal">
+              📋 Copy Text
+            </button>
+            <button id="btn-print-note" class="btn-icon-minimal">
+              🖨️ Save Keepsake
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ==================================================================
+         02 / THE VISUAL ARCHIVE (PHOTO COLLAGE / LOOKBOOK)
+         ================================================================== -->
+    <section class="gallery-section" id="archive">
+      <div class="section-anchor">
+        <div class="section-label-group">
+          <span class="section-index">02</span>
+          <h2 class="section-heading">Inna ichiri memories adiku</h2>
+        </div>
+
+      </div>
+
+      <!-- Photo Lookbook Grid -->
+      <div class="archive-grid" id="archive-grid">
+        <!-- Rendered by script.js -->
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div>// ALL RIGHTS RESERVED</div>
+      <div>njn oru sambavam ale</div>
+    </footer>
+
+  </div>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-content">
+      <button id="lightbox-prev" class="lightbox-nav-btn prev" title="Previous Frame">‹</button>
+      <button id="lightbox-next" class="lightbox-nav-btn next" title="Next Frame">›</button>
+      <button id="lightbox-close" class="lightbox-close">&times;</button>
+      <img id="lightbox-img" src="" alt="Archive Frame" class="lightbox-img" />
+      <div id="lightbox-counter" class="lightbox-counter"></div>
+    </div>
+  </div>
+
+  <!-- EDIT / CUSTOMIZER MODAL -->
+  <div id="edit-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+        <h3 class="modal-title">Edit Tribute Details</h3>
+        <button id="btn-close-edit"
+          style="background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer;">&times;</button>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Her Name</label>
+          <input type="text" id="input-friend-name" class="form-input" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Birthday Date</label>
+          <input type="text" id="input-bday-date" class="form-input" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Edition (e.g. Chapter 24 / Vol. 25)</label>
+          <input type="text" id="input-edition" class="form-input" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input type="text" id="input-sender-name" class="form-input" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">The Written Note (Separate paragraphs with blank lines)</label>
+        <textarea id="input-letter" class="form-textarea" rows="7"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Custom Video Background (e.g. Videezy MP4)</label>
+        <div style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap; margin-bottom:0.75rem;">
+          <label for="input-bg-video" class="btn-icon-minimal" style="cursor:pointer; display:inline-flex;">
+            🎬 Load Downloaded Video (.mp4)
+          </label>
+          <input type="file" id="input-bg-video" accept="video/mp4,video/*" style="display:none;" />
+          <span id="bg-video-status"
+            style="font-size:0.78rem; color:var(--text-muted); font-family:var(--font-mono);">Active: Space Galaxy &amp;
+            Nebula</span>
+        </div>
+        <input type="url" id="input-bg-video-url" class="form-input"
+          placeholder="Or paste a direct video stream URL (https://.../video.mp4)" />
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:1rem; margin-top:2rem;">
+        <button id="btn-reset-edit" class="btn-icon-minimal" style="margin-right:auto;">Reset Defaults</button>
+        <button id="btn-save-edit" class="btn-enter-archive" style="padding:0.75rem 1.75rem; font-size:0.75rem;">Save
+          Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast-notice" class="toast-notice">Notice</div>
+
+  <!-- Scripts -->
+  <script src="js/config.js?v=10"></script>
+  <script src="js/galaxy.js?v=10"></script>
+  <script src="js/audio.js?v=10"></script>
+  <script src="js/script.js?v=10"></script>
+</body>
+
+</html>

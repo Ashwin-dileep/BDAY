@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="warmCoffee" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#292524" />
+      <stop offset="50%" stop-color="#1c1917" />
+      <stop offset="100%" stop-color="#0c0a09" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="1000" fill="#141416" />
+
+  <g transform="translate(40, 60)">
+    <rect width="720" height="880" fill="url(#warmCoffee)" />
+
+    <!-- Minimalist table / shadows -->
+    <ellipse cx="360" cy="540" rx="280" ry="140" fill="#171514" />
+    <circle cx="360" cy="520" r="110" fill="#292524" stroke="#44403c" stroke-width="2" />
+    <circle cx="360" cy="520" r="85" fill="#451a03" />
+    <circle cx="360" cy="520" r="50" fill="#78350f" opacity="0.8" />
+    <ellipse cx="370" cy="510" rx="30" ry="18" fill="#fef3c7" opacity="0.3" />
+
+    <!-- Window Light Beam -->
+    <polygon points="120,0 360,0 600,880 280,880" fill="#ffffff" opacity="0.04" />
+
+    <!-- Date Stamp -->
+    <text x="690" y="850" font-family="'Space Mono', monospace" font-size="16" fill="#f59e0b" opacity="0.75" text-anchor="end" letter-spacing="2">
+      '26 11 12
+    </text>
+  </g>
+
+  <text x="50" y="40" font-family="'Space Mono', monospace" font-size="12" fill="#78716c" letter-spacing="3">
+    FUJIFILM PRO 400H // 35MM
+  </text>
+  <text x="750" y="40" font-family="'Space Mono', monospace" font-size="12" fill="#78716c" text-anchor="end" letter-spacing="2">
+    ▶ 04A
+  </text>
+</svg>

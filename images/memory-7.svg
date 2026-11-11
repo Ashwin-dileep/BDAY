@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <radialGradient id="glow7" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#eab308" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="#111114"/>
+  <g transform="translate(40, 60)">
+    <rect width="720" height="880" fill="#1e1b18"/>
+    <!-- Vinyl record circles -->
+    <circle cx="360" cy="440" r="260" fill="#0c0a09" stroke="#292524" stroke-width="6"/>
+    <circle cx="360" cy="440" r="200" fill="none" stroke="#1c1917" stroke-width="12" stroke-dasharray="4,8"/>
+    <circle cx="360" cy="440" r="140" fill="none" stroke="#292524" stroke-width="8"/>
+    <circle cx="360" cy="440" r="70" fill="#d97706" opacity="0.85"/>
+    <circle cx="360" cy="440" r="18" fill="#111114"/>
+    <rect width="720" height="880" fill="url(#glow7)"/>
+    <text x="690" y="850" font-family="'Space Mono', monospace" font-size="16" fill="#d97706" opacity="0.75" text-anchor="end" letter-spacing="2">'26 11 12</text>
+  </g>
+  <text x="50" y="40" font-family="'Space Mono', monospace" font-size="12" fill="#78716c" letter-spacing="3">KODAK GOLD // 35MM</text>
+  <text x="750" y="40" font-family="'Space Mono', monospace" font-size="12" fill="#78716c" text-anchor="end" letter-spacing="2">▶ 07A</text>
+</svg>

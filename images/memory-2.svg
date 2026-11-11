@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="twilightGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="45%" stop-color="#1e1b4b" />
+      <stop offset="70%" stop-color="#431407" />
+      <stop offset="90%" stop-color="#b45309" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="650" fill="#141416" />
+
+  <g transform="translate(40, 50)">
+    <rect width="920" height="550" fill="url(#twilightGrad)" />
+
+    <!-- Distant Sea Horizon -->
+    <rect y="420" width="920" height="130" fill="#090d16" />
+
+    <!-- Road Perspective -->
+    <polygon points="460,420 500,420 720,550 240,550" fill="#1c1917" />
+    <!-- Road Line -->
+    <polygon points="478,420 482,420 484,550 476,550" fill="#fbbf24" opacity="0.6" />
+
+    <!-- Distant Mountain Silhouettes -->
+    <polygon points="0,420 180,330 360,420" fill="#171226" opacity="0.8" />
+    <polygon points="280,420 480,310 680,420" fill="#0f0d1a" opacity="0.9" />
+
+    <!-- Tail lights streak -->
+    <ellipse cx="480" cy="440" rx="60" ry="6" fill="#ef4444" opacity="0.6" />
+    <circle cx="470" cy="438" r="4" fill="#fca5a5" />
+    <circle cx="490" cy="438" r="4" fill="#fca5a5" />
+
+    <!-- 35mm Date Stamp -->
+    <text x="890" y="525" font-family="'Space Mono', monospace" font-size="15" fill="#f59e0b" opacity="0.75" text-anchor="end" letter-spacing="2">
+      '26 11 12
+    </text>
+  </g>
+
+  <text x="50" y="32" font-family="'Space Mono', monospace" font-size="11" fill="#78716c" letter-spacing="3">
+    KODAK VISION3 500T // 35MM
+  </text>
+  <text x="950" y="32" font-family="'Space Mono', monospace" font-size="11" fill="#78716c" text-anchor="end" letter-spacing="2">
+    ▶ 02A
+  </text>
+</svg>
