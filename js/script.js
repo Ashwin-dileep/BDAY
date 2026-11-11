@@ -146,11 +146,11 @@ function initTimeLock(config) {
         </div>
       `;
 
-      if (enterBtn) {
+      if (enterBtn && (!enterBtn.classList.contains("btn-unlocked") || enterBtn.disabled)) {
         enterBtn.disabled = false;
         enterBtn.classList.remove("btn-locked");
         enterBtn.classList.add("btn-unlocked");
-        enterBtn.innerHTML = `Enter Archive <span>→</span>`;
+        enterBtn.innerHTML = `<span>Enter Archive →</span>`;
       }
 
       if (!wasUnlocked && diff <= 0) {
@@ -185,7 +185,7 @@ function initTimeLock(config) {
       if (cdMins) cdMins.textContent = mins.toString().padStart(2, "0");
       if (cdSecs) cdSecs.textContent = secs.toString().padStart(2, "0");
 
-      if (enterBtn) {
+      if (enterBtn && (!enterBtn.disabled || !enterBtn.classList.contains("btn-locked"))) {
         enterBtn.disabled = true;
         enterBtn.classList.add("btn-locked");
         enterBtn.classList.remove("btn-unlocked");

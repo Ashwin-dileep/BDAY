@@ -226,26 +226,38 @@ body.entered .container,
 .btn-enter-archive {
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #0b0b0e;
-  background: var(--accent);
-  border: none;
+  color: #a0a0aa;
+  background: rgba(26, 26, 32, 0.95);
+  border: 1px solid rgba(212, 175, 55, 0.3);
   padding: 1.1rem 2.6rem;
   border-radius: 999px;
   cursor: pointer;
   transition: var(--transition);
   font-weight: 700;
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  box-sizing: border-box;
+}
+
+.btn-enter-archive span {
+  display: inline-block;
+  background: transparent !important;
+  color: inherit !important;
+  white-space: nowrap !important;
 }
 
 .btn-enter-archive:hover {
-  background: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
 }
 
 /* ====================================================================
@@ -364,25 +376,39 @@ body.entered .container,
   font-weight: 700;
 }
 
-.btn-enter-archive.btn-locked {
-  background: rgba(26, 26, 32, 0.85);
-  color: var(--text-muted);
-  border: 1px solid rgba(212, 175, 55, 0.25);
-  cursor: not-allowed;
-  box-shadow: none;
-  opacity: 0.75;
+.btn-enter-archive.btn-locked,
+.btn-enter-archive:disabled {
+  background: rgba(26, 26, 32, 0.95) !important;
+  color: #a0a0aa !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
   transform: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
 }
 
 .btn-enter-archive.btn-locked:hover {
-  background: rgba(26, 26, 32, 0.85);
-  color: var(--text-muted);
+  background: rgba(26, 26, 32, 0.95) !important;
+  color: #a0a0aa !important;
   transform: none !important;
   box-shadow: none !important;
 }
 
 .btn-enter-archive.btn-unlocked {
+  background: var(--accent) !important;
+  color: #0b0b0e !important;
+  border: none !important;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.35) !important;
+  cursor: pointer !important;
   animation: pulseGold 2.5s infinite;
+}
+
+.btn-enter-archive.btn-unlocked:hover {
+  background: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.35) !important;
 }
 
 @keyframes pulseGold {
@@ -1159,20 +1185,25 @@ body.entered .container,
 
   /* Enter / Locked Buttons on Mobile */
   .btn-enter-archive {
-    padding: 0.85rem 1.4rem;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    white-space: nowrap;
-    width: auto;
-    max-width: 90vw;
-    box-sizing: border-box;
+    padding: 0.82rem 1.25rem !important;
+    font-size: 0.68rem !important;
+    letter-spacing: 0.1em !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    max-width: 90vw !important;
+    box-sizing: border-box !important;
   }
 
-  .btn-enter-archive.btn-locked {
-    padding: 0.82rem 1.15rem;
-    font-size: 0.66rem;
-    letter-spacing: 0.08em;
-    white-space: nowrap;
+  .btn-enter-archive.btn-locked,
+  .btn-enter-archive:disabled {
+    padding: 0.8rem 1.15rem !important;
+    font-size: 0.65rem !important;
+    letter-spacing: 0.08em !important;
+    white-space: nowrap !important;
+    background: rgba(26, 26, 32, 0.95) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    color: #a0a0aa !important;
+    opacity: 1 !important;
   }
 
   /* Section Common Headers */
