@@ -12,6 +12,8 @@ const DEFAULT_CONFIG = {
   birthdayDate: "November 13",
   senderName: "RootFolder",
   entryPrefix: "HAPPY BIRTHDAYYYY",
+  // Unlock target: November 13, 2026 sharp at 00:00:00 IST
+  unlockTimestamp: 1794508200000,
 
   // Theme: "dark-editorial" (Onyx & Champagne) or "warm-linen" (Minimalist Ivory & Charcoal)
   theme: "dark-editorial",

@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   populateContent(config);
   initEntry();
+  initTimeLock(config);
   initGallery(config);
   initLetterActions(config);
   initCustomizer(config);
@@ -73,6 +74,131 @@ function populateContent(config) {
 }
 
 /**
+ * Time Lock Countdown Timer (Unlocks November 13 sharp)
+ */
+function initTimeLock(config) {
+  const entry = document.getElementById("cinematic-entry");
+  const enterBtn = document.getElementById("btn-enter");
+  const lockBox = document.getElementById("entry-lock-box");
+  const monogram = document.getElementById("entry-monogram");
+
+  if (!lockBox) return;
+
+  const initialLockBoxHTML = lockBox.innerHTML;
+  const targetTime = config.unlockTimestamp || 1794508200000; // Nov 13, 2026 00:00:00 IST
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlPreview = urlParams.get("preview") === "unlocked" || urlParams.get("preview") === "1" || urlParams.get("unlock") === "1";
+  const urlForceLock = urlParams.get("lock") === "1";
+
+  // Monogram triple-click easter egg for developer preview toggle
+  let monogramClicks = 0;
+  let monogramClickTimer = null;
+  if (monogram) {
+    monogram.style.cursor = "pointer";
+    monogram.title = "Archival Seal (Triple-click for developer preview)";
+    monogram.addEventListener("click", () => {
+      monogramClicks++;
+      clearTimeout(monogramClickTimer);
+      monogramClickTimer = setTimeout(() => {
+        monogramClicks = 0;
+      }, 700);
+
+      if (monogramClicks >= 3) {
+        monogramClicks = 0;
+        const currentBypass = localStorage.getItem("bday_preview_unlocked") === "true";
+        if (currentBypass) {
+          localStorage.removeItem("bday_preview_unlocked");
+          showToast("Time lock active — Archive locked.");
+        } else {
+          localStorage.setItem("bday_preview_unlocked", "true");
+          showToast("Developer preview: Archive unlocked!");
+        }
+        updateLockState();
+      }
+    });
+  }
+
+  let wasUnlocked = false;
+
+  function updateLockState() {
+    const isLocalBypassed = localStorage.getItem("bday_preview_unlocked") === "true";
+    const isBypassed = (urlPreview || isLocalBypassed) && !urlForceLock;
+    const now = Date.now();
+    const diff = targetTime - now;
+
+    if (diff <= 0 || isBypassed) {
+      // UNLOCKED
+      if (entry) {
+        entry.classList.remove("locked");
+        entry.classList.add("unlocked");
+      }
+
+      lockBox.classList.add("unlocked");
+      lockBox.innerHTML = `
+        <div class="lock-header" style="margin-bottom:0.4rem;">
+          <span class="lock-icon" style="color:var(--accent);">✨</span>
+          <span class="lock-badge-text" style="color:var(--accent); font-weight:700;">ARCHIVE OFFICIALLY UNLOCKED</span>
+        </div>
+        <div class="unlocked-celebration-text">Happy 20th Birthday, <span>${config.friendName || "Nanduuttaaaaaaaaa"}!</span></div>
+        <div class="lock-footer-info" style="border:none; padding-top:0.35rem; color:var(--text-sub);">
+          <span>November 13 • Access Granted</span>
+        </div>
+      `;
+
+      if (enterBtn) {
+        enterBtn.disabled = false;
+        enterBtn.classList.remove("btn-locked");
+        enterBtn.classList.add("btn-unlocked");
+        enterBtn.innerHTML = `Enter Archive <span>→</span>`;
+      }
+
+      if (!wasUnlocked && diff <= 0) {
+        if (window.soundEngine && typeof window.soundEngine.playChime === "function") {
+          window.soundEngine.playChime();
+        }
+      }
+      wasUnlocked = true;
+    } else {
+      // LOCKED
+      wasUnlocked = false;
+      if (entry) {
+        entry.classList.add("locked");
+        entry.classList.remove("unlocked");
+      }
+
+      if (lockBox.classList.contains("unlocked")) {
+        lockBox.classList.remove("unlocked");
+        lockBox.innerHTML = initialLockBoxHTML;
+      }
+
+      const totalSecs = Math.max(0, Math.floor(diff / 1000));
+      const hours = Math.floor(totalSecs / 3600);
+      const mins = Math.floor((totalSecs % 3600) / 60);
+      const secs = totalSecs % 60;
+
+      const cdHours = document.getElementById("cd-hours");
+      const cdMins = document.getElementById("cd-mins");
+      const cdSecs = document.getElementById("cd-secs");
+
+      if (cdHours) cdHours.textContent = hours.toString().padStart(2, "0");
+      if (cdMins) cdMins.textContent = mins.toString().padStart(2, "0");
+      if (cdSecs) cdSecs.textContent = secs.toString().padStart(2, "0");
+
+      if (enterBtn) {
+        enterBtn.disabled = true;
+        enterBtn.classList.add("btn-locked");
+        enterBtn.classList.remove("btn-unlocked");
+        enterBtn.innerHTML = `<span>🔒 LOCKED UNTIL MIDNIGHT SHARP</span>`;
+      }
+    }
+  }
+
+  updateLockState();
+  setInterval(updateLockState, 1000);
+}
+
+/**
  * Cinematic Entry Reveal
  */
 function initEntry() {
@@ -81,6 +207,7 @@ function initEntry() {
 
   if (enterBtn && entry) {
     enterBtn.addEventListener("click", () => {
+      if (enterBtn.disabled || entry.classList.contains("locked")) return;
       document.body.classList.add("entered");
       entry.classList.add("revealed");
       if (window.soundEngine) window.soundEngine.playClick();
